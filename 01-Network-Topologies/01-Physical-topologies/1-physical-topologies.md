@@ -2,7 +2,7 @@
 ---
 # عکسی از کله توپولوژی هایه فیزیکی
 <p align=center>
-	<img src="../000-images/physical-topologies.png" alt="image" width=800>
+	<img src="../../000-images/physical-topologies.png" alt="image" width=800>
 </p>
 ### ۱. Point-to-Point — نقطه‌به‌نقطه
 
