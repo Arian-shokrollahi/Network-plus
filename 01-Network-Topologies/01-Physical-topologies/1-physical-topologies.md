@@ -4,6 +4,9 @@
 <p align=center>
 	<img src="../../000-images/physical-topologies.png" alt="image" width=800>
 </p>
+
+---
+
 ### ۱. Point-to-Point — نقطه‌به‌نقطه
 
 **چیست؟**  
