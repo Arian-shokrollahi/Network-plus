@@ -260,7 +260,7 @@ flags: qr aa
 2. روی Create Token کلیک کن.
 
 <p align=center>
-	<img src="../00-images/createtoken.png" alt="images" width=800>
+	<img src="../000-images/createtoken.png" alt="images" width=800>
 </p>
 
 
