@@ -1,4 +1,4 @@
-##  0 تا 100 خرید DNS و فعال کردن اون
+##  0 تا 100 خرید DNS و فعال کردن اون HTTPs و certbot
 ---
 ## مراحل خرید DNS از ایرنیک و دادن NAMESERVER بهش
 
@@ -243,3 +243,116 @@ flags: qr aa
 
 ---
 ا-<mark> دهم </mark> ----> برایه این بخش اول فایل  [section 10 requirements](01-section-10-requirements.md)رو بخونید 
+
+دهم: ساخت API Token در Cloudflare
+
+حالا می‌خواهیم به Certbot اجازه بدهیم از طریق API با Cloudflare ارتباط برقرار کند و رکوردهای TXT را به‌صورت خودکار ایجاد و حذف کند.
+
+چرا؟ چون برای گرفتن SSL از Let's Encrypt با روش DNS-01 باید بتوانیم TXT Record بسازیم.
+
+### مراحل ساخت Token
+
+1. وارد داشبورد Cloudflare شو:
+
+[Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens?utm_source=chatgpt.com)
+
+
+2. روی Create Token کلیک کن.
+
+<p align=center>
+	<img src="../00-images/createtoken.png" alt="images" width=800>
+</p>
+
+
+بعد همچین
+
+میرید تویه همچین صحفه ای 
+<p align=center>
+	<img src="../000-images/edittoken name.png" alt="images" width=800>
+</p>
+
+
+
+بعد از اینکه رویه create new token زدید رویه گزینه ی Edit zone DNS بزنید 
+چون قراره یه کار مهم کنیم: جلوتر میگیم
+
+
+
+<p align=center>
+	<img src="../000-images/change name for toke and select edit zone.png" alt="images" width=800>
+</p>
+
+
+بعد که شما میاید رویه اون add policy میزنید
+
+
+<p align=center>
+	<img src="../000-images/entireaccount.png" alt="images" width=800>
+</p>
+
+
+و این هم از کار هایی که باید بکنید 
+
+
+<p align=center>
+	<img src="../000-images/editpolicy.png" alt="images" width=800>
+</p>
+عبارت All IP addresses allowed یعنی محدودیت آدرس IP برای استفاده از این API Token تعریف نکرده‌ایم.
+
+- اگر IP عمومی ثابت (Static IP) داشته باشی: می‌توانی آن IP را در قسمت `Client IP address filtering` وارد کنی تا فقط همان IP اجازه استفاده از Token را داشته باشد.
+    
+- اگر IP داینامیک (Dynamic IP) داشته باشی: بهتر است این قسمت را خالی بگذاری و وضعیت `All IP addresses allowed` را حفظ کنی.
+    
+
+چون با تغییر IP، درخواست‌های Certbot ممکن است مسدود شوند.
+
+یک نکته مهم: محدودیت IP با محدودیت دسترسی دامنه فرق دارد. ما همچنان توکن را فقط به `shokbil.ir` محدود کرده‌ایم.
+
+و حالا نهایی سازی و گرفتن توکن و قضیه All IP addresses allowed
+
+<p align=center>
+	<img src="../000-images/review toke.png" alt="images" width=800>
+</p>
+ 
+
+بعد به شما یک کد میده که اون کد رو نباید جایی نشون بدید
+
+---
+ا-<mark> یازدهم </mark>   در فایل هایه بعدی 
+
+## جمع بندی مرحله ۱ تا ۱۰
+
+
+## جمع‌بندی نهایی مراحل ۱ تا ۱۰
+
+## مسیر طی‌شده
+
+1. ثبت دامنه
+    
+    انجام شد
+    
+    ثبت `shokbil.ir` در NIC
+    
+2. معرفی Nameserver
+    
+    انجام شد
+    
+    معرفی Nameserverهای Cloudflare در NIC
+    
+1. ا-DNS Delegation
+    
+    انجام شد
+    
+    واگذاری مدیریت DNS به Cloudflare
+    
+2. بررسی DNS
+    
+    مسیر بررسی انجام شد
+    
+    تست Delegation و Authoritative DNS
+    
+3. ساخت API Token
+    
+    انجام شد
+    
+    ایجاد توکن محدود به دامنه `shokbil.ir`
