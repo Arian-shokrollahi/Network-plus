@@ -32,7 +32,7 @@
 ا-<mark>چهارم</mark> ---> وقتی بزنید رویه اون  DNS یه همچین صحفه ای میبینید
 
 <p align=center>
-	<img src="../00-images/nameserverin-nic.ir.png" alt="images" width=800>
+	<img src="../000-images/nameserverin-nic.ir.png" alt="images" width=800>
 </p>
 
 ### فهمیدید چی شد دو مدل دارد پس تنظیمات dns درون ایرنیک:
@@ -109,7 +109,7 @@ ns1.company.com
 
 
 <p align=center>
-	<img src="../000-images/addnameserverinnic.ir.png.png" alt="images" width=800>
+	<img src="../000-images/addnameserverinnic.ir.png" alt="images" width=800>
 </p>
 
 ---
