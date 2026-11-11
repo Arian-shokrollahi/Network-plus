@@ -242,4 +242,4 @@ flags: qr aa
 این تست را برای هر دو Nameserver انجام می‌دهیم تا مطمئن شویم هر دو درست کار می‌کنند.
 
 ---
-ا-<mark> دهم </mark> ----> برایه این بخش اول فایل  [01-section-10-requirements.md](section 10 requirements )رو بخونید 
+ا-<mark> دهم </mark> ----> برایه این بخش اول فایل  [section 10 requirements](01-section-10-requirements.md)رو بخونید 
